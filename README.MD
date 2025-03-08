@@ -334,7 +334,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.9'
+        python-version: '3.11.3'
     
     - name: Install dependencies
       run: |
@@ -359,7 +359,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.9'
+        python-version: '3.11.3'
     
     - name: Install dependencies
       run: |

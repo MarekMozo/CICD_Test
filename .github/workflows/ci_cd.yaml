@@ -10,10 +10,10 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v3
       with:
         python-version: '3.11.3'
     
@@ -35,10 +35,10 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v3
       with:
         python-version: '3.11.3'
     
@@ -80,7 +80,7 @@ jobs:
         python train.py
     
     - name: Save model and scaler
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: models
         path: models/
@@ -89,16 +89,16 @@ jobs:
     needs: build-and-train
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     
     - name: Download models
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v3
       with:
         name: models
         path: models/
     
     - name: Build and push Docker image
-      uses: docker/build-push-action@v2
+      uses: docker/build-push-action@v3
       with:
         context: .
         push: false  # In a real scenario, you would push to a registry
